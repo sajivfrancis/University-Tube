@@ -1,0 +1,204 @@
+﻿@model UniversityPlace.Models.ViewModels.Account.UserVM
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>University Place</title>
+    @Styles.Render("~/Content/css")
+    <link href="~/Content/Site.css" rel="stylesheet" />
+</head>
+<body>
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+         <div class="col">
+              <div class="navbar-header">
+                  <a class="navbar-brand" href="@Url.Action("Index", "Home")"><img class="logo-navbar" style="width:40px" id='Logo' src="~/Content/img/logo.png" /></a>
+                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                      </button>
+                    </div>
+                </div>
+                <div class="col" style="display: flex; justify-content: flex-end">
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li>@Html.Action("LoginPartial", "Account")</li>
+                    </ul>
+            </div>
+        </div>
+    </div>
+</div>
+    <article class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="login-main">
+                    <img src="~/Content/img/university.png" alt="Smiley face" height="420" width="420">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="login-main">
+                    <h3 style="color:#0ead0e"><i class="fa fa-shield"></i><b>Register</b></h3>
+                    @using (Html.BeginForm("CreateAccount", "Account", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                    {
+                        @Html.AntiForgeryToken()
+                            <div class="form-horizontal">
+                                <hr />
+                                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                <div class="form-group">
+                                    <div class="col-md-10">
+                                        @Html.EditorFor(model => model.FirstName, new { htmlAttributes = new { @class = "form-control", @placeholder = "First Name" } })
+                                        @Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="col-md-10">
+                                        @Html.EditorFor(model => model.LastName, new { htmlAttributes = new { @class = "form-control", @placeholder = "Last Name" } })
+                                        @Html.ValidationMessageFor(model => model.LastName, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="col-md-10">
+                                        @Html.EditorFor(model => model.EmailAddress, new { htmlAttributes = new { @class = "form-control", @placeholder = "Email Address" } })
+                                        @Html.ValidationMessageFor(model => model.EmailAddress, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="col-md-10">
+                                        @Html.EditorFor(model => model.Username, new { htmlAttributes = new { @class = "form-control", @placeholder = "Username" } })
+                                        @Html.ValidationMessageFor(model => model.Username, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="col-md-10">
+                                        @Html.PasswordFor(model => model.Password, new { @class = "form-control", @placeholder = "Password" })
+                                        @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="col-md-10">
+                                        @Html.EditorFor(model => model.University, new { htmlAttributes = new { @class = "form-control", @placeholder = "University" } })
+                                        @Html.ValidationMessageFor(model => model.University, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="control-label col-md-2" for="FirstName">Image</label>
+                                    <div class="col-md-12">
+                                        <input type="file" value="Upload Image" name="file" id="ImageUpload" />
+                                        <img id="imgpreview" src="#" />
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="col-md-offset-2 col-md-10">
+                                        <input type="submit" value="Sign Up" class="btn btn-lg btn-success" />
+                                    </div>
+                                </div>
+                            </div>
+                    }
+                </div>
+            </div>
+        </div>
+</article>
+    <center>
+        <footer class="container">
+            <hr>
+
+            <div style="clear:both"></div>
+            <small class="copyrights"> © University Place  2019</small>
+        </footer>
+    </center>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    <script>
+        $(document).ready(function () {
+
+
+            /*
+            / Login form ajax
+            */
+
+            $("form#loginform").submit(function (e) {
+                e.preventDefault();
+
+                var $this = $(this);
+
+                $this.find(".ajaxdiv").removeClass("hide");
+
+                var username = $("#Username").val();
+                var password = $("#Password").val();
+                var url = "/account/Login";
+
+                $.post(url, { username: username, password: password }, function (data) {
+                    var response = data.trim();
+
+                    if (response == "ok") {
+                        document.location.href = "/";
+                    } else {
+                        $this.find(".ajaxdiv").addClass("hide");
+                        $("div.em").fadeIn("fast");
+                        setTimeout(function () {
+                            $("div.em").fadeOut("fast");
+                        }, 2000);
+                    }
+                });
+
+            });
+
+            ////////////////////////////////////////////////////
+
+            ////////////////////////////////////////////////////
+
+            /*
+            / Preview selected image
+            */
+
+            function readURL(input) {
+                if (input.files && input.files[0]) {
+                    var reader = new FileReader();
+
+                    reader.onload = function (e) {
+                        $("img#imgpreview")
+                            .attr("src", e.target.result)
+                            .width(200)
+                            .height(200);
+                    }
+
+                    reader.readAsDataURL(input.files[0]);
+                }
+            }
+
+            $("#ImageUpload").change(function () {
+                readURL(this);
+            });
+
+            ////////////////////////////////////////////////////
+
+        }); // End ready
+        /*----------------------------------------------------
+        /*  Small Logo Upon Scroll
+        /* ------------------------------------------------- */
+        jQuery(document).ready(function ($) {
+            jQuery(window).scroll(function () {
+                if (jQuery(this).scrollTop() > 40) {
+                    jQuery('.s5_logo').addClass('small-logo');
+                } else {
+                    jQuery('.s5_logo').removeClass('small-logo');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

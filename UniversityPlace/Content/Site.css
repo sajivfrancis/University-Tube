@@ -1,0 +1,599 @@
+﻿body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.navbar {
+    background-color: #374dd8;
+}
+
+    .navbar .navbar-brand {
+        color: #ffffff;
+    }
+
+        .navbar .navbar-brand:hover,
+        .navbar .navbar-brand:focus {
+            color: #ffffff;
+        }
+
+    .navbar .navbar-text {
+        color: #ffffff;
+    }
+
+        .navbar .navbar-text a {
+            color: #ffffff;
+        }
+
+            .navbar .navbar-text a:hover,
+            .navbar .navbar-text a:focus {
+                color: #ffffff;
+            }
+
+    .navbar .navbar-nav .nav-link {
+        color: #ffffff;
+        border-radius: .25rem;
+        margin: 0 0.25em;
+    }
+
+        .navbar .navbar-nav .nav-link:not(.disabled):hover,
+        .navbar .navbar-nav .nav-link:not(.disabled):focus {
+            color: #ffffff;
+        }
+
+    .navbar .navbar-nav .dropdown-menu {
+        background-color: #374dd8;
+        border-color: #374dd8;
+    }
+
+        .navbar .navbar-nav .dropdown-menu .dropdown-item {
+            color: #ffffff;
+        }
+
+            .navbar .navbar-nav .dropdown-menu .dropdown-item:hover,
+            .navbar .navbar-nav .dropdown-menu .dropdown-item:focus,
+            .navbar .navbar-nav .dropdown-menu .dropdown-item.active {
+                color: #ffffff;
+                background-color: #374dd8;
+            }
+
+        .navbar .navbar-nav .dropdown-menu .dropdown-divider {
+            border-top-color: #374dd8;
+        }
+
+    .navbar .navbar-nav .nav-item.active .nav-link,
+    .navbar .navbar-nav .nav-item.active .nav-link:hover,
+    .navbar .navbar-nav .nav-item.active .nav-link:focus,
+    .navbar .navbar-nav .nav-item.show .nav-link,
+    .navbar .navbar-nav .nav-item.show .nav-link:hover,
+    .navbar .navbar-nav .nav-item.show .nav-link:focus {
+        color: #ffffff;
+        background-color: #374dd8;
+    }
+
+    .navbar .navbar-toggle {
+        border-color: #374dd8;
+    }
+
+        .navbar .navbar-toggle:hover,
+        .navbar .navbar-toggle:focus {
+            background-color: #374dd8;
+        }
+
+        .navbar .navbar-toggle .navbar-toggler-icon {
+            color: #ffffff;
+        }
+
+    .navbar .navbar-collapse,
+    .navbar .navbar-form {
+        border-color: #ffffff;
+    }
+
+    .navbar .navbar-link {
+        color: #ffffff;
+    }
+
+        .navbar .navbar-link:hover {
+            color: #ffffff;
+        }
+
+@media (max-width: 575px) {
+    .navbar-expand-sm .navbar-nav .show .dropdown-menu .dropdown-item {
+        color: #ffffff;
+    }
+
+        .navbar-expand-sm .navbar-nav .show .dropdown-menu .dropdown-item:hover,
+        .navbar-expand-sm .navbar-nav .show .dropdown-menu .dropdown-item:focus {
+            color: #ffffff;
+        }
+
+        .navbar-expand-sm .navbar-nav .show .dropdown-menu .dropdown-item.active {
+            color: #ffffff;
+            background-color: #374dd8;
+        }
+}
+
+@media (max-width: 767px) {
+    .navbar-expand-md .navbar-nav .show .dropdown-menu .dropdown-item {
+        color: #ffffff;
+    }
+
+        .navbar-expand-md .navbar-nav .show .dropdown-menu .dropdown-item:hover,
+        .navbar-expand-md .navbar-nav .show .dropdown-menu .dropdown-item:focus {
+            color: #ffffff;
+        }
+
+        .navbar-expand-md .navbar-nav .show .dropdown-menu .dropdown-item.active {
+            color: #ffffff;
+            background-color: #374dd8;
+        }
+}
+
+@media (max-width: 991px) {
+    .navbar-expand-lg .navbar-nav .show .dropdown-menu .dropdown-item {
+        color: #ffffff;
+    }
+
+        .navbar-expand-lg .navbar-nav .show .dropdown-menu .dropdown-item:hover,
+        .navbar-expand-lg .navbar-nav .show .dropdown-menu .dropdown-item:focus {
+            color: #ffffff;
+        }
+
+        .navbar-expand-lg .navbar-nav .show .dropdown-menu .dropdown-item.active {
+            color: #ffffff;
+            background-color: #374dd8;
+        }
+}
+
+@media (max-width: 1199px) {
+    .navbar-expand-xl .navbar-nav .show .dropdown-menu .dropdown-item {
+        color: #ffffff;
+    }
+
+        .navbar-expand-xl .navbar-nav .show .dropdown-menu .dropdown-item:hover,
+        .navbar-expand-xl .navbar-nav .show .dropdown-menu .dropdown-item:focus {
+            color: #ffffff;
+        }
+
+        .navbar-expand-xl .navbar-nav .show .dropdown-menu .dropdown-item.active {
+            color: #ffffff;
+            background-color: #374dd8;
+        }
+}
+
+.navbar-expand .navbar-nav .show .dropdown-menu .dropdown-item {
+    color: #ffffff;
+}
+
+.navbar-expand .navbar-nav .show .dropdown-menu .dropdown-item:hover,
+.navbar-expand .navbar-nav .show .dropdown-menu .dropdown-item:focus {
+    color: #ffffff;
+}
+
+.navbar-expand .navbar-nav .show .dropdown-menu .dropdown-item.active {
+    color: #ffffff;
+    background-color: #374dd8;
+}
+
+.logo i {
+    font-size: 31px;
+    margin-right: 4px;
+    word-spacing: 14px;
+}
+
+.logo {
+    color: white;
+    margin: 0;
+    font-size: 20px;
+    padding: 4px 0;
+    padding-bottom: 15px;
+}
+
+.login-bottom-text {
+    font-size: 12px;
+    color: white;
+    line-height: 19px;
+}
+
+header {
+    background: #374dd8;
+    padding-top: 25px;
+}
+
+    header .btn-header-login {
+        margin-bottom: 15px;
+    }
+
+.login-main {
+    margin-top: 130px;
+}
+
+.multibox {
+    padding-bottom: 10px;
+}
+
+.login-main span {
+    font-size: 12px;
+}
+
+.footer-options ul {
+    clear: both;
+}
+.footer-options ul li {
+    float: left;
+    list-style: none;
+    padding: 5px;
+    font-size: 12px;
+}
+
+.footer-options ul li a {
+    text-decoration: none;
+    color: #000;
+}
+
+.copyrights {
+    margin-top: 25px;
+}
+
+label {
+    display: inline-block;
+}
+
+input {
+    display: block;
+}
+
+
+#loginform {
+    position: relative;
+}
+
+#loginform .ajaxdiv {
+    position: absolute;
+    bottom: 30px;
+    right: -30px;
+}
+
+.form-horizontal.loginform {
+    color: white;
+    position: relative;
+}
+
+.form-horizontal.loginform label {
+    color: white;
+}
+
+.form-horizontal.loginform > div.form-group {
+    display: inline-block;
+    margin-top: 20px;
+    margin-right: 10px;
+}
+
+div.em {
+    position: absolute;
+    right: -200px;
+    bottom: -10px;
+    z-index: 1;
+    display: none;
+}
+
+#loginform {
+    position: relative;
+}
+
+#loginform .ajaxdiv {
+        position: absolute;
+        bottom: 30px;
+        right: -30px;
+}
+
+li.livesearchli {
+    width: 500px;
+    display: block;
+    padding: 10px;
+    position: relative;
+}
+
+input#searchtext {
+    width: 500px;
+    position: relative;
+    margin-top: 7px;
+    margin-left: 100px;
+    padding: 5px 10px;
+    top: -5px;
+}
+
+li.livesearchli img,
+li.msgcountli img {
+    width: 50px;
+}
+
+ul#livesearchul {
+    position: absolute;
+    background: #cd8e2b;
+    right: -10px;
+    top: 60px;
+    padding: 0;
+}
+
+ul#livesearchul li.close,
+ul#frnotiful li.close,
+ul#msgnotiful li.close {
+    position: absolute;
+    color: white;
+    opacity: 1 !important;
+    right: 10px;
+    list-style: none;
+    top: 0;
+    cursor: pointer;
+    z-index: 10;
+    }   
+
+.userimg img {
+    width: 200px;
+    margin-top: 100px;
+    overflow: auto;
+    height: 100%;
+    padding: 0;
+    margin-left: 37px;
+}
+
+li.name {
+    display: block;
+    color: white;
+    margin: 0 10px;
+    margin-top: 15px;
+}
+
+.frnotif {
+    color: white;
+}
+
+.frnotif.red {
+    color: #4fe11c;
+}
+
+.msgnotif.red {
+    color: #4fe11c;
+    cursor: pointer;
+}
+
+li.frcountli {
+    position: relative;
+    top: 15px;
+}
+
+ul#frnotiful {
+    position: absolute;
+    right: 0;
+    top: 45px;
+    background: #cd8e2b;
+}
+
+li.frcountli img {
+    width: 50px;
+}
+
+li.frnotifli {
+    width: 300px;
+    display: block;
+    padding: 10px;
+}
+
+span.frnotif > span {
+    display: inline-block;
+    margin-left: 5px;
+}
+
+.friends {
+    width: 150px;
+}
+
+li.msgcountli {
+    color: white;
+    margin-top: 15px;
+    margin-left: 10px;
+}
+
+li.msgcountli span > span {
+    display: inline-block;
+    margin-left: 5px;
+}
+
+li.msgnotifli {
+    list-style: none;
+    width: 300px;
+    display: inline-block;
+    padding: 10px;
+}
+
+ul#msgnotiful {
+    position: absolute;
+    padding: 0;
+    background: #cd8e2b;
+    right: -10px;
+    top: 30px;
+}
+
+.sendmsgparent {
+    width: 400px;
+    height: 100px;
+    padding: 10px;
+    margin-top: 20px;
+    margin-right: 10px;
+    margin-left: 2px;
+}
+
+.msgtextarea {
+    width: 400px;
+    height: 100px;
+    padding: 10px;
+    margin-top: 20px;
+    margin-right: 10px;
+    margin-left: 2px;
+}
+
+.wall textarea {
+    width: 400px;
+    height: 100px;
+    padding: 10px;
+    margin-top: 20px;
+    margin-right: 10px;
+    margin-left: 2px;
+}
+
+.arefriendsdiv alert alert-warning {
+    width: 200px;
+}
+
+.ta,
+.ta:hover,
+.ta:focus {
+    display: block;
+    position: relative;
+    background: #374dd8;
+    padding: 10px;
+    color: white;
+    font-weight: bold;
+    width: 150px;
+    text-align: center;
+    margin-top: 40px;
+    text-decoration: none;
+}
+
+.tamessage:focus {
+        display: block;
+        background: #374dd8;
+        padding: 10px;
+        color: white;
+        font-weight: bold;
+        width: 150px;
+        text-align: center;
+        margin-top: 40px;
+        text-decoration: none;
+    }
+
+.sendmsgparent img {
+    position: absolute;
+    bottom: 40px;
+    left: 180px;
+}
+
+.sendmsgnotif {
+    position: relative;
+    bottom: 0px;
+    left: 180px;
+}
+
+img#imgpreview {
+    margin-top: 20px;
+}
+
+.wall img {
+    position: absolute;
+    bottom: 15px;
+    left: 180px;
+}
+
+.friendwall {
+    margin: 20px;
+}
+
+    .friendwall img {
+        margin-right: 10px;
+        width: 50px;
+    }
+
+body > .chatbox {
+    position: absolute;
+    left: -3000px;
+}
+
+.chat {
+    position: fixed;
+    bottom: 0;
+    right: 30px;
+}
+
+    .chat ul li {
+        cursor: pointer;
+        margin: 10px;
+        list-style: none;
+        padding: 10px;
+    }
+
+        .chat ul li img {
+            width: 30px !important;
+        }
+
+.chatboxholder {
+    position: fixed;
+    bottom: 0;
+    right: 130px;
+    width: 100%;
+    height: 50px;
+}
+
+.chatbox {
+    width: 300px;
+    height: 400px;
+    background: #222;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.chatbox h4 {
+    position: absolute;
+    top: -65px;
+    left: 0;
+    z-index: 5;
+    background: #222;
+    width: 100%;
+    padding: 5px;
+}
+
+.chatbox img {
+    width: 30px !important;
+    margin-bottom: 15px;
+}
+
+.chatboxtext {
+    position: absolute;
+    top: 10px;
+    left: 0;
+    right: 0;
+    background: white;
+    width: 90%;
+    height: 270px;
+    z-index: 1;
+    margin: 0 auto;
+    max-height: 270px;
+    overflow: scroll;
+    padding: 10px;
+}
+
+.chattextarea {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    bottom: 40px;
+    width: 90%;
+    height: 60px;
+    padding: 10px;
+}
+
+a.sendchat {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}
+
+.chat ul li.msg {
+    background: green;
+    color: white;
+}
+
+.wall img.sm {
+    bottom: 40px;
+}
+
