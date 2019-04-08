@@ -7,9 +7,7 @@ University Place
 
 <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
 
-<p align="center">
-  <img width="720" height="420" src="https://github.com/sajivfrancis/University-Tube/blob/master/UniversityPlace/Content/img/github.png">
-</p>
+[![up](https://github.com/sajivfrancis/University-Tube/blob/master/UniversityPlace/Content/img/github.png)](https://youtu.be/uzxuCmjRxRs)
 
 This application contains the functionalities required to operate a social media platform.
 
