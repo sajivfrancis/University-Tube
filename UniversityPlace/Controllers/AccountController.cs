@@ -7,6 +7,7 @@ using System.Web.Mvc;
 using System.Web.Security;
 using UniversityPlace.Models.Data;
 using UniversityPlace.Models.ViewModels.Account;
+using UniversityPlace.Models.ViewModels.Profile;
 
 namespace UniversityPlace.Controllers
 {
@@ -220,6 +221,23 @@ namespace UniversityPlace.Controllers
             var messageCount = db.Messages.Count(x => x.To == userId && x.Read == false);
 
             ViewBag.MsgCount = messageCount;
+
+            // Viewbag user wall
+            WallDTO wall = new WallDTO();
+            ViewBag.WallMessage = db.Wall.Where(x => x.Id == userId).Select(x => x.Message).FirstOrDefault();
+
+            // Viewbag friend walls
+
+            List<int> friendIds1 = db.Friends.Where(x => x.User1 == userId && x.Active == true).ToArray().Select(x => x.User2).ToList();
+
+            List<int> friendIds2 = db.Friends.Where(x => x.User2 == userId && x.Active == true).ToArray().Select(x => x.User1).ToList();
+
+            List<int> allFriendsIds = friendIds1.Concat(friendIds2).ToList();
+
+            List<WallVM> walls = db.Wall.Where(x => allFriendsIds.Contains(x.Id)).ToArray().OrderByDescending(x => x.DateEdited).Select(x => new WallVM(x)).ToList();
+
+            ViewBag.Walls = walls;
+
 
 
             // Return

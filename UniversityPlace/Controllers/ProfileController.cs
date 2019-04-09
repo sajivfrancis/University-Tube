@@ -180,6 +180,22 @@ namespace UniversityPlace.Controllers
             return Json(list);
         }
 
+        // POST: Profile/UpdateWallMessage
+        [HttpPost]
+        public void UpdateWallMessage(int id, string message)
+        {
+            // Init db
+            Db db = new Db();
+
+            // Update wall
+            WallDTO wall = db.Wall.Find(id);
+
+            wall.Message = message;
+            wall.DateEdited = DateTime.Now;
+
+            db.SaveChanges();
+        }
+
 
     }
 }

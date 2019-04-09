@@ -296,7 +296,7 @@ input#searchtext {
     width: 500px;
     position: relative;
     margin-top: 7px;
-    margin-left: 100px;
+    margin-left: 90px;
     padding: 5px 10px;
     top: -5px;
 }
@@ -414,39 +414,42 @@ ul#msgnotiful {
 }
 
 .sendmsgparent {
-    width: 400px;
+    width: 500px;
     height: 100px;
     padding: 10px;
     margin-top: 20px;
     margin-right: 10px;
     margin-left: 2px;
+    position: relative;
 }
 
 .msgtextarea {
-    width: 400px;
+    width: 500px;
     height: 100px;
     padding: 10px;
     margin-top: 20px;
     margin-right: 10px;
     margin-left: 2px;
+    position: relative;
 }
 
 .wall textarea {
-    width: 400px;
+    width: 500px;
     height: 100px;
     padding: 10px;
     margin-top: 20px;
     margin-right: 10px;
     margin-left: 2px;
+    position: relative;
 }
 
 .arefriendsdiv alert alert-warning {
     width: 200px;
 }
 
-.ta,
-.ta:hover,
-.ta:focus {
+.tawall,
+.tawall:hover,
+.tawall:focus {
     display: block;
     position: relative;
     background: #374dd8;
@@ -455,31 +458,39 @@ ul#msgnotiful {
     font-weight: bold;
     width: 150px;
     text-align: center;
+    margin-top: 10px;
+    margin-left: 178px;
+    text-decoration: none;
+}
+
+.tamessage,
+.tamessage:hover,
+.tamessage:focus {
+    display: block;
+    background: #374dd8;
+    padding: 10px;
+    color: white;
+    font-weight: bold;
+    width: 150px;
+    text-align: center;
+    margin-left: 178px;
     margin-top: 40px;
     text-decoration: none;
 }
 
-.tamessage:focus {
-        display: block;
-        background: #374dd8;
-        padding: 10px;
-        color: white;
-        font-weight: bold;
-        width: 150px;
-        text-align: center;
-        margin-top: 40px;
-        text-decoration: none;
-    }
-
 .sendmsgparent img {
-    position: absolute;
+    position: relative;
+    top: 10px;
     bottom: 40px;
+    width: 150px;
     left: 180px;
 }
 
 .sendmsgnotif {
     position: relative;
+    top: 10px;
     bottom: 0px;
+    width: 150px;
     left: 180px;
 }
 
@@ -494,13 +505,13 @@ img#imgpreview {
 }
 
 .friendwall {
-    margin: 20px;
+    margin: 10px;
 }
 
-    .friendwall img {
-        margin-right: 10px;
-        width: 50px;
-    }
+.friendwall img {
+    margin-right: 5px;
+    width: 40px;
+ }
 
 body > .chatbox {
     position: absolute;

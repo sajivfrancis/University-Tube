@@ -91,5 +91,42 @@ namespace UniversityPlace
             clients.fcount(Context.User.Identity.Name, username, friendCount1, friendCount2);
 
         }
+        public void NotifyOfMessage(string friend)
+        {
+            // Init db
+            Db db = new Db();
+
+            // Get friend id
+            UserDTO userDTO = db.Users.Where(x => x.Username.Equals(friend)).FirstOrDefault();
+            int friendId = userDTO.Id;
+
+            // Get message count
+            var messageCount = db.Messages.Count(x => x.To == friendId && x.Read == false);
+
+            // Set clients
+            var clients = Clients.Others;
+
+            // Call js function
+            clients.msgcount(friend, messageCount);
+        }
+
+        public void NotifyOfMessageOwner()
+        {
+            // Init db
+            Db db = new Db();
+
+            // Get user id
+            UserDTO userDTO = db.Users.Where(x => x.Username.Equals(Context.User.Identity.Name)).FirstOrDefault();
+            int userId = userDTO.Id;
+
+            // Get message count
+            var messageCount = db.Messages.Count(x => x.To == userId && x.Read == false);
+
+            // Set clients
+            var clients = Clients.Caller;
+
+            // Call js function
+            clients.msgcount(Context.User.Identity.Name, messageCount);
+        }
     }
 }
