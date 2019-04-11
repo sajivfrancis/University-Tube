@@ -69,7 +69,7 @@
                     <div class="msgtextarea">
                         <textarea id="msgarea"></textarea>
                     </div>
-                    <a href="#" id="sendmsg" class="ta">Send Message</a>
+                    <a href="#" id="sendmsg" class="tamessage">Send Message</a>
                     <img src="~/Content/img/ajax-loaderblack.gif" class="sm hide" />
                     <div class="sendmsgnotif alert alert-success hide">Message sent.</div>
                 </div>
@@ -77,35 +77,34 @@
         }
 
     </div>
-
-</div>
-@if (ViewBag.UserType == "owner")
-{
-<div class="row friendwallrow">
-    <div class="col-md-12 col-md-3">
-        @if (Enumerable.Count(ViewBag.Walls) > 0)
-        {
-            <h3>What are your friends saying...</h3>
-            foreach (var item in ViewBag.Walls)
-            {
-                if (item.Message != "")
+    @if (ViewBag.UserType == "owner")
+    {
+        <div class="row friendwallrow">
+            <div class="col-xs-12 col-md-6 wall">
+                @if (Enumerable.Count(ViewBag.Walls) > 0)
                 {
-                    <div class="friendwall">
-                        <img src="~/Uploads/@(item.Id).jpg" />
-                        @item.Message
-                    </div>
-                }
+                <center><h3>What are your friends saying...</h3></center>
+                    foreach (var item in ViewBag.Walls)
+                    {
+                        if (item.Message != "")
+                        {
+                            <div class="friendwall">
+                                <img src="~/Uploads/@(item.Id).jpg" />
+                                @item.Message
+                            </div>
+                        }
 
-            }
-        }
-        else
-        {
-            @:<h3>There are no wall posts by your friends.</h3>
-        }
-    </div>
- </div>
+                    }
+                }
+                else
+                {
+                    @:<h3>There are no wall posts by your friends.</h3>
+                }
+            </div>
+        </div>
     }
 
+</div>
     @section Scripts {
         <script src="~/Scripts/jquery.signalR-2.4.0.min.js"></script>
         <script src="@Url.Content("~/signalr/hubs")" type="text/javascript"></script>

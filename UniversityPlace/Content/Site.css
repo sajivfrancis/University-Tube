@@ -499,19 +499,20 @@ img#imgpreview {
 }
 
 .wall img {
-    position: absolute;
-    bottom: 15px;
-    left: 180px;
+    position: relative;
+    bottom: 5px;
 }
 
 .friendwall {
-    margin: 10px;
+    margin: 40px;
+    align-content: flex-start;
 }
 
 .friendwall img {
-    margin-right: 5px;
-    width: 40px;
- }
+     margin-right: 10px;
+     width: 50px;
+     align-content: flex-start;
+}
 
 body > .chatbox {
     position: absolute;
@@ -608,3 +609,16 @@ a.sendchat {
     bottom: 40px;
 }
 
+.github-button, .widget-lg {
+    display: initial;
+    padding: 25px;
+    height: 14px;
+    padding: 2px 5px;
+    font-size: 11px;
+    font-weight: 600;
+    line-height: 14px;
+    vertical-align: middle;
+    cursor: pointer;
+    border: 1px solid #1872b5;
+    border-radius: 0.25em;
+}

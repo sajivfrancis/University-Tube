@@ -59,6 +59,10 @@ namespace UniversityPlace.Controllers
                 University = model.University
             };
 
+            #region  Password Hashing 
+            userDTO.Password = Crypto.Hash(userDTO.Password);
+            #endregion
+
             // Add to DTO
             db.Users.Add(userDTO);
 
