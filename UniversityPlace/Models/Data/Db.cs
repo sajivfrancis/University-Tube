@@ -13,5 +13,6 @@ namespace UniversityPlace.Models.Data
         public DbSet<FriendDTO> Friends { get; set; }
         public DbSet<MessageDTO> Messages { get; set; }
         public DbSet<WallDTO> Wall { get; set; }
+        public DbSet<OnlineDTO> Online { get; set; }
     }
 }

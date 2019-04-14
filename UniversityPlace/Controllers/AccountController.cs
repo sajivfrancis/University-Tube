@@ -11,6 +11,7 @@ using UniversityPlace.Models.ViewModels.Profile;
 
 namespace UniversityPlace.Controllers
 {
+
     public class AccountController : Controller
     {
         // GET: /
@@ -29,6 +30,8 @@ namespace UniversityPlace.Controllers
 
         // POST: Account/CreateAccount
         [HttpPost]
+        [AllowAnonymous]
+        [ValidateAntiForgeryToken]
         public ActionResult CreateAccount(UserVM model, HttpPostedFileBase file)
         {
             // Init db
@@ -58,10 +61,6 @@ namespace UniversityPlace.Controllers
                 Password = model.Password,
                 University = model.University
             };
-
-            #region  Password Hashing 
-            userDTO.Password = Crypto.Hash(userDTO.Password);
-            #endregion
 
             // Add to DTO
             db.Users.Add(userDTO);

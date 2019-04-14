@@ -532,9 +532,9 @@ body > .chatbox {
         padding: 10px;
     }
 
-        .chat ul li img {
-            width: 30px !important;
-        }
+.chat ul li img {
+   width: 30px !important;
+}
 
 .chatboxholder {
     position: fixed;
@@ -547,7 +547,7 @@ body > .chatbox {
 .chatbox {
     width: 300px;
     height: 400px;
-    background: #222;
+    background: #374dd8;
     position: absolute;
     bottom: 0;
     right: 0;
@@ -558,7 +558,7 @@ body > .chatbox {
     top: -65px;
     left: 0;
     z-index: 5;
-    background: #222;
+    background: #374dd8;
     width: 100%;
     padding: 5px;
 }
@@ -597,6 +597,7 @@ body > .chatbox {
 a.sendchat {
     position: absolute;
     bottom: 10px;
+    color:white;
     right: 10px;
 }
 

@@ -105,6 +105,9 @@
     }
 
 </div>
+<div class="chat @User.Identity.Name">
+    <ul></ul>
+</div>
     @section Scripts {
         <script src="~/Scripts/jquery.signalR-2.4.0.min.js"></script>
         <script src="@Url.Content("~/signalr/hubs")" type="text/javascript"></script>
@@ -418,7 +421,7 @@
                             ////////////////////////////////////////////////////
 
                             /*
-                            / Display unread messages
+                            / Sendchat
                             */
 
                             $("body").on("click", "a.sendchat", function (e) {
